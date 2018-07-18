@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>{{i.name}}</h1>
+<h2>Are you sure you want to delete {{i.name}}?</h2>
+<form action="{{url_for('deleteRestaurant', restaurant_id = i.id)}}" method="post">
+{% for dish in dishes %}
+<p><strong>{{dish.name}}</strong></p>
+<p>Price : {{dish.price}}</p>
+<p>Desription :{{dish.description}}</p>
+{% endfor %}
+<input type="submit" value = "Delete">
+	<a href="{{url_for('showRestaurants')}}"><input type="button" value="Cancel"></a>
+</form>
+</body>
+</html>

@@ -25,13 +25,15 @@
 
 <ul>
 {% for restaurant in restaurants%}
-<li>{{restaurant.name}}</li>
-</ul>
+<li><a href="{{url_for('showMenu', restaurant_id = restaurant.id)}}">{{restaurant.name}}</a></li>
 <div class="editdeletepane">
-	<a href="{{url_for('editRestaurant', restaurant_id = restaurant">Edit</a>
-	<a href="{{url_for('deleteRestaurant', restaurant_id = restaurant_id)}}">Delete</a>
+	<a href="{{url_for('editRestaurant', restaurant_id = restaurant.id)}}">Edit</a>
+	<a href="{{url_for('deleteRestaurant', restaurant_id = restaurant.id)}}">Delete</a>
 </div>
+</br>
 
-<h3><a href="{{newRestaurant"}}>Click Here</a> to Create New Restaurant...</h3>
+{% endfor %}
+</ul>
+<h3><a href="{{url_for('newRestaurant')}}">Click Here</a> to Create New Restaurant...</h3>
 </body>
 </html>
