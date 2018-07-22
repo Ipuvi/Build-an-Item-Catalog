@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="{{url_for('static' , filename = 'style35.css')}}">
 	<title></title>
 </head>
 <body>
-
+{% include "header.html" %}
+<div class="pane">
 <h1>Add Menu Items...</h1>
 <form action="{{url_for('newMenuItem' , restaurant_id = restaurant_id)}}" , method = "post">
 
@@ -26,5 +28,6 @@
 	<input type="submit" value = "Create">
 	<a href = "{{url_for('showMenu' , restaurant_id = restaurant_id)}}"><input type="button" value = "Cancel"></a>
 </form>
+</div>
 </body>
 </html>

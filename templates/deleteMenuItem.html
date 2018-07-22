@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="{{url_for('static' , filename = 'style35.css')}}">
 	<title></title>
 </head>
 <body>
+{% include "header.html" %}
+<div class="pane">
 <h1>{{i.name}}</h1>
 <h2>Are you sure you want to delete {{i.name}}?</h2>
 <form action="{{url_for('deleteMenuItem', restaurant_id = restaurant.id , menu_id = i.id)}}" method="post">
 	<p><strong>{{i.course}}</strong></p>
 	<p>Dish : {{i.name}}</p>
 	<p>Price : {{i.price}}</p>
-	<p>Desription :{{i.description}}</p>
+	<p>Desription : {{i.description}}</p>
 	<input type="submit" value = "Delete">
 	<a href="{{url_for('showMenu' , restaurant_id = restaurant.id)}}"><input type="button" value="Cancel"></a>
 </form>
+</div>
 </body>
 </html>

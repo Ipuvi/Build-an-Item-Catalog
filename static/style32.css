@@ -1,0 +1,58 @@
+html,body
+{
+	height: 100%;
+}
+body
+{
+	background-image: url('images/bg_body.jpg');
+	background-size: cover;
+}
+h1,
+h2,
+h3,
+h4
+{
+	color: #DF013A;
+}
+h1,
+h2
+{
+	font-family: 'georgia', serif;
+	margin: 0;
+}
+h1
+{
+	border-bottom: 2px solid #3B170B;
+	text-align: center;
+}
+
+h2
+{
+	font-size: 1.2em;
+}
+li
+{
+	font-size: 1.4em;
+	font-family: sans-serif;
+	color: #000000;
+}
+a
+{
+	text-decoration: none;
+	color: #DF013A;
+	font-size: .75em;
+}
+
+.pane
+{
+	position: absolute;
+	top: 10%;
+	left: 25%;
+	right: 25%;
+	border: 2px solid;
+	border-radius: 25px;
+	padding: 5px;
+	margin: 5px;
+	border-color: #999999;
+	background-color: #F8E0E0;
+}

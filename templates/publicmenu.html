@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{url_for('static' , filename = 'style35.css')}}">
+	<title></title>
+</head>
+<body class="bg">
+{% include "header.html" %}
+<div class="pane">
+<h1><a href="{{url_for('showRestaurants')}}">{{restaurant.name}}</a></h1>
+<figure class="creator">
+				<img src="{{ creator.picture}}">
+				<figcaption>{{ creator.name }}</figcaption>
+			</figure>
+<div class="flash">
+	
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+
+	<ul>
+		{% for message in messages %}
+		<li><strong>{{ message }}</strong></li>
+		{% endfor %}
+	</ul>
+
+	{% endif %}
+	{% endwith %}
+</div>
+{% for item in Menu %}
+<p><strong>{{item.name}}</strong></p>
+<p>{{item.price}}</p>
+<!--<p>{{item.course}}</p>-->
+<p>{{item.description}}</p>
+</br>
+{% endfor %}
+
+
+</div>
+</body>
+</html>
